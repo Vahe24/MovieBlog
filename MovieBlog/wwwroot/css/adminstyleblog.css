@@ -1,0 +1,97 @@
+
+p{
+	text-align:center;
+	color: whitesmoke;
+	font-size: 20px;
+
+}
+.styletext {
+
+	background: linear-gradient(112deg, #2cabdb, #18d997, #8160e8, #8425d2);
+	background-size: 800% 800%;
+	-webkit-animation: AnimationName 5s ease infinite;
+	-moz-animation: AnimationName 5s ease infinite;
+	animation: AnimationName 5s ease infinite;
+	padding: 12px;
+	width: 405px;
+	height: 635px;
+}
+input[type=text] {
+	display: inline-block;
+	width: 100%;
+	margin: 20px 0;
+	padding: 10px;
+	border: 2px dashed #2cabdb;
+	outline: none;
+	font-size: 20px;
+	font-family: 'Economica', 'Arial', sans-serif;
+	font-weight: 400;
+	transition: all 0.2s ease;
+}
+	input:focus {
+		border-color: greenyellow;
+	}
+textarea {
+	display: inline-block;
+	width: 100%;
+	margin: 20px 0;
+	padding: 10px;
+	border: 2px dashed #2cabdb;
+	outline: none;
+	font-size: 20px;
+	font-family: 'Economica', 'Arial', sans-serif;
+	font-weight: 400;
+	transition: all 0.2s ease;
+}
+input[type =submit] {
+	font-family: Georgia;
+	background-color: #0284a8;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+@-webkit-keyframes AnimationName {
+	0% {
+		background-position: 49% 0%
+	}
+
+	50% {
+		background-position: 52% 100%
+	}
+
+	100% {
+		background-position: 49% 0%
+	}
+}
+
+@-moz-keyframes AnimationName {
+	0% {
+		background-position: 49% 0%
+	}
+
+	50% {
+		background-position: 52% 100%
+	}
+
+	100% {
+		background-position: 49% 0%
+	}
+}
+
+@keyframes AnimationName {
+	0% {
+		background-position: 49% 0%
+	}
+
+	50% {
+		background-position: 52% 100%
+	}
+
+	100% {
+		background-position: 49% 0%
+	}
+}
+

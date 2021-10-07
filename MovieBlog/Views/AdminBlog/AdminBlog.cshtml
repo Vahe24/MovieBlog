@@ -1,0 +1,72 @@
+﻿@{ Layout = null;}
+
+<div style="display: flex">
+    <form method="post" enctype="multipart/form-data" asp-controller="AdminBlog" asp-action="AdminBlog" style="margin-right: 10px">
+        <link rel="stylesheet" type="text/css" href="~/css/adminstyleblog.css">
+        <div class="styletext">
+
+
+            <p>Photo</p>
+            <input style="margin: 0px; width: 400px; height: 20px;" type="file" name="files" multiple />
+
+
+
+            <p>Autor</p>
+            <input style="margin: 0px; width: 400px; height: 20px;" type="text" name="autor" />
+
+            <p>Titel</p>
+            <input style="margin: 0px; width: 400px; height: 20px;" type="text" name="title" />
+
+
+            <p>Text</p>
+            <input type="text" style="margin: 0px; width: 400px; height: 20px;" name="text">
+
+            <p>BigText</p>
+            <textarea style="margin: 0px; width: 400px; height: 160px;resize: none;" name="bigtext"></textarea>
+
+            <br><br />
+
+            <input style="margin: 0px; width: 405px; height: 50px;" type="submit" value="Upload" />
+            </div>
+    </form>
+    <link rel='stylesheet' href='~/css/borders.css' type='text/css' />
+
+    @if (ViewBag.AdminBlog != null)
+{
+<table id="t01" border="1" border-collapse: collapse;>
+    @foreach (var p in ViewBag.AdminBlog)
+    {
+        <tr>
+            <th>Photo!</th>
+            <th>Title</th>
+            <th>Autor</th>
+            <th>Text</th>
+            <th>BigText</th>
+            <th>Time</th>
+            <th>Remove</th>
+
+        </tr>
+        <tr>
+            <td> <img data-seq src="~/@p.ImagePath" width="200" /></td>
+
+
+            <td> @p.Title</td>
+            <td> @p.Autor</td>
+            <td> @p.Text</td>
+            <td> @p.BigText</td>
+
+            <td>@p.Time</td>
+          
+            <td>
+                <form method="post" action="~/AdminBlog/Delete">
+                    <input type="hidden" value="@p.Id" name="hid" />
+                    <input type="submit" value="delete" />
+                </form>
+            </td>
+        </tr>
+
+
+    }
+</table>
+}
+</div>

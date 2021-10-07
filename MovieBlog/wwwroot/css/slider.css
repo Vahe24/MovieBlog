@@ -1,0 +1,319 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.banner1, .banner2, .banner3, .banner4 {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+img {
+    width: 120%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    animation: zoom-out 15s linear infinite;
+}
+
+@keyframes zoom-out {
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+.text-box {
+    width: 600px;
+    position: absolute;
+    top: 332px;
+    left: 126px;
+    color: white;
+    animation: textup 12s linear infinite;
+    transform: translateY(100px);
+}
+
+    .text-box h1 {
+        margin-bottom: 40px;
+    }
+
+    .text-box h3 {
+        margin-bottom: 40px;
+    }
+
+    .text-box p {
+        color: white;
+        font-size: 22px;
+        line-height: 18px;
+    }
+
+    .text-box a {
+        text-decoration: none;
+        color: #f48808;
+    }
+
+    .text-box span {
+        background: #f48808;
+        height: 2px;
+        width: 100px;
+        position: absolute;
+        left: 0;
+    }
+
+.banner1 {
+    animation: slide1 12s linear infinite;
+}
+
+.banner2 {
+    animation: slide2 12s linear infinite;
+}
+
+.banner3 {
+    animation: slide3 12s linear infinite;
+}
+
+.banner4 {
+    animation: slide3 12s linear infinite;
+}
+
+
+@keyframes slide1 {
+    0% {
+        visibility: visible;
+    }
+
+    25% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    75% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes slide2 {
+    0% {
+        visibility: hidden;
+    }
+
+    25% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: visible;
+    }
+
+    75% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes slide3 {
+    0% {
+        visibility: hidden;
+    }
+
+    25% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    75% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes slide4 {
+    0% {
+        visibility: hidden;
+    }
+
+    25% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    75% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes textup {
+    10% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.text-box1 {
+    animation-delay: 0s;
+}
+
+.text-box2 {
+    animation-delay: 3s;
+}
+
+.text-box3 {
+    animation-delay: 6s;
+}
+
+.text-box4 {
+    animation-delay: 9s;
+}
+
+@media screen and (max-width:1300px) {
+    .text-box {
+        width: 600px;
+        position: absolute;
+        top: 332px;
+        left: 126px;
+        color: white;
+        animation: textup 12s linear infinite;
+        transform: translateY(100px);
+    }
+
+        .text-box h1 {
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .text-box h3 {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .text-box p {
+            line-height: 18px;
+            font-size: 20px;
+        }
+
+        .text-box a {
+            font-size: 21px;
+            text-decoration: none;
+            color: #f48808;
+        }
+
+        .text-box span {
+            background: #f48808;
+            height: 2px;
+            width: 90px;
+            position: absolute;
+            left: 0;
+        }
+}
+
+@media screen and (max-width:992px) {
+    .text-box {
+        width: 600px;
+        position: absolute;
+        top: 429px;
+        left: 20px;
+        color: white;
+        animation: textup 12s linear infinite;
+        transform: translateY(100px);
+    }
+
+        .text-box h1 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .text-box h3 {
+            margin-bottom: 20px;
+            font-size: 10.4px;
+        }
+
+        .text-box p {
+            line-height: 18px;
+            font-size: 11px;
+        }
+
+        .text-box a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #f48808;
+        }
+
+        .text-box span {
+            background: #f48808;
+            height: 2px;
+            width: 80px;
+            position: absolute;
+            left: 0;
+        }
+}
+
+@media screen and (max-width:768px) {
+    .text-box {
+        width: 600px;
+        position: absolute;
+        top: 476px;
+        left: 20px;
+        color: white;
+        animation: textup 12s linear infinite;
+        transform: translateY(100px);
+    }
+
+        .text-box h1 {
+            margin-bottom: 10px;
+            font-size: 8px;
+        }
+
+        .text-box h3 {
+            margin-bottom: 10px;
+            font-size: 5.2px;
+        }
+
+        .text-box p {
+            line-height: 0px;
+            font-size: 6px;
+        }
+
+        .text-box a {
+            font-size: 7px;
+            text-decoration: none;
+            color: #f48808;
+        }
+
+        .text-box span {
+            background: #f48808;
+            height: 2px;
+            width: 50px;
+            position: absolute;
+            left: 0;
+        }
+}

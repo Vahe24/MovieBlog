@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ïðîñòàÿ òàáëèöà íà CSS</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            /* Âûäåëåíèå ñòðîê "÷åðåç îäíó" */
+            $("table tr:nth-child(odd)").addClass("odd-row");
+
+            $("table td:first-child, table th:first-child").addClass("first");
+
+            $("table td:last-child, table th:last-child").addClass("last");
+        });
+    </script>
+    <link rel='stylesheet' href='~/css/stylemenu.css' type='text/css' />
+</head>
+<body>
+    <div id="content">
+        <table cellspacing="0">
+
+            <tr>
+                <td><a href="~/AdminBlog/adminblog">Blog</a></td>
+
+            </tr>
+            <tr>
+                <td><a href="~/AdminMovie/adminmovie">Movie</a></td>
+
+            </tr>
+            <tr>
+                <td><a href="~/Admin/LogOut">LogOut</a></td>
+
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
+
+
+

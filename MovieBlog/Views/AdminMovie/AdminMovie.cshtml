@@ -1,0 +1,81 @@
+﻿@{ Layout = null;}
+<div style="display:flex">
+    <form method="post" enctype="multipart/form-data" asp-controller="AdminMovie" asp-action="AdminMovie" style="margin-right: 10px">
+
+        <link rel="stylesheet" type="text/css" href="/css/adminstylemove.css">
+        <div class="styletext">
+
+
+            <p>Photo</p>
+            <input style="margin: 0px; width: 400px; height: 20px;" type="file" name="files" multiple />
+
+
+
+
+            <p>Watch</p>
+            <input style="margin: 0px; width: 400px; height: 20px;" type="text" name="watch" />
+
+
+
+
+
+            <p>Titel</p>
+            <input style="margin: 0px; width: 400px; height: 20px;" type="text" name="title" />
+
+
+
+
+            <p>Text</p>
+            <textarea style="margin: 0px; width: 400px; height: 160px;resize: none;" name="text"></textarea>
+
+
+
+            <br><br>
+
+
+            <input style="margin: 0px; width: 400px; height: 40px;" type="submit" value="Upload" />
+
+
+        </div>
+    </form>
+    <br />
+    <link rel='stylesheet' href='~/css/borders.css' type='text/css' />
+
+    @if (ViewBag.AdminMovie != null)
+    {
+        <table id="t01" border="1" border-collapse: collapse;>
+            @foreach (var p in ViewBag.AdminMovie)
+            {
+
+                <tr>
+                    <th>Photo!</th>
+                    <th>Title</th>
+                    <th>WatchLink</th>
+                    <th>Text</th>
+                    <th>Latest</th>
+                    <th>Remove</th>
+
+                </tr>
+                <tr>
+                    <td> <img data-seq src="~/@p.ImagePath" width="200" /></td>
+
+
+                    <td> @p.Title</td>
+                    <td> @p.Watch</td>
+                    <td> @p.Text</td>
+                    <td>@p.Latest</td>
+
+                    <td>
+                        <form method="post" action="~/AdminMovie/Delete">
+                            <input type="hidden" value="@p.Id" name="hid" />
+                            <input type="submit" value="delete" />
+                        </form>
+                    </td>
+                </tr>
+
+
+            }
+        </table>
+    }
+    
+</div>

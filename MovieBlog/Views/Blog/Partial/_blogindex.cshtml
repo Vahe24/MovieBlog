@@ -1,0 +1,74 @@
+﻿<br />
+<br />
+<section class="blog-posts grid-system">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="all-blog-posts">
+                    <div class="row">
+                        @foreach (var i in ViewBag.Blog)
+                        {
+                            <div class="col-lg-6">
+                                <div class="blog-post">
+                                    <div class="blog-thumb">
+                                        @*<img src="~/@i.ImagePath" alt="">*@
+                                        <a href="~/Blog/OldBlogs/?id=@i.Id"><img src="~/@i.ImagePath" alt=""></a>
+                                    </div>
+                                    <div class="down-content">
+                                        @*<span>@i.Title</span>*@
+                                        <a href="~/Blog/OldBlogs/?id=@i.Id"><h4>@i.Title</h4></a>
+                                        <ul class="post-info">
+                                            <li><a href="#">@i.Autor</a></li>
+                                            <li><a href="#">@i.Time</a></li>
+
+                                        </ul>
+                                        <p>@i.Text</p>
+                                        @*<div class="post-options">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-tags"></i></li>
+                                                            <li><a href="#">Best Templates</a>,</li>
+                                                            <li><a href="#">TemplateMo</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="row">
+                        @*<div class="col-lg-12">
+                            <div class="sidebar-item search">
+                                <form id="search_form" name="gs" method="GET" action="#">
+                                    <input type="text" name="q" class="searchText" style="height:40px;width:376px;" placeholder="type to search..." autocomplete="on">
+                                </form>
+                            </div>
+                        </div>*@
+                        <div class="col-lg-12">
+                            <link rel="stylesheet" type="text/css" href="~/css/jwick.css">
+                            <div class="sidebar-item recent-posts">
+                                <div class="wick">
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</section>

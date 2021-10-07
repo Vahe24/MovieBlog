@@ -1,0 +1,32 @@
+﻿@{Layout = null;}
+@model MovieBlog.ViewModels.LoginModel
+    <body class="backgroundg">
+
+        <form asp-action="Index" asp-controller="Admin" asp-anti-forgery="true" style="margin:auto;">
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+            <link rel="stylesheet" type="text/css" href="~/css/signin.css">
+            <div class="admin">
+                <h1 class="admin-min">Cesar III</h1>
+            </div>
+            
+           
+            <br>
+            <div class="container">
+
+
+                @*<label asp-for="Email"></label>*@
+                <input style="font-family: 'Economica';" type="email" placeholder="Email" asp-for="Email" />
+                <span asp-validation-for="Email" />
+
+
+                @*<label asp-for="Password"></label>*@
+                <input style="font-family: 'Economica';" asp-for="Password" placeholder="Password" />
+                <span asp-validation-for="Password" />
+
+                <input type="submit" value="SignIn" class="btn btn-outline-dark" />
+
+            </div>
+
+        </form>
+    </body>

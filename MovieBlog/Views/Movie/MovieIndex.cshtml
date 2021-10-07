@@ -1,0 +1,117 @@
+﻿
+@model IList<MovieBlog.Models.Movies.Movie>
+
+<section class="blog-posts grid-system">
+    <link rel="stylesheet" href="~/css/jwick.css">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="all-blog-posts ">
+                    <div class="row" id="search-result">
+                        @foreach (var i in Model)
+                        {
+                            <div class="col-lg-4 col-6 ">
+                                <div class="blog-post">
+                                    <div class="searchhh">
+                                        <div class="blog-thumb">
+                                            <img src="~/@i.ImagePath" alt="">
+                                        </div>
+                                        <div class="down-content" style="padding-bottom: 10px;padding-top: 10px;">
+
+                                            @*<span>@i.Title</span>*@
+                                            @*<a href="~/Movie/MovieSingle/?id=@i.Id">*@<h4>@i.Title</h4>@*</a>*@
+                                            <ul class="post-info">
+
+                                                @*<li><a href="#">@i.Latest</a></li>*@
+
+                                            </ul>
+                                            <p style="padding-bottom: 0px; padding-top: 2px;">@i.Text</p>
+                                            <a style="color: #F48840; " href="@i.Watch">Watch Movie!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="sidebar-item search">
+                                <form id="search_form">
+                                    <input type="text" id="searchhh" name="prefix" class="searchText" style="height:40px;width:376px;" placeholder="type to search...">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <link rel="stylesheet" type="text/css" href="~/css/jwick.css">
+                            <div class="sidebar-item recent-posts">
+                                <div class="wick">
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/vendor/jquery/jquery.min.js"></script>
+<script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#searchform').on('keyup', function () {
+            var searchoption = $('#searchoption').val();
+            var searchform = $('#searchform').val();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        //function contains(text_one, text_two) {
+        //    if (text_one.indexof(text_two) != -1)
+        //        return true;
+        //}
+        $("#searchhh").keyup(function () {
+            var searchtext = $(this).val().toLowerCase();
+            $('#search-result').children().remove();
+            fetch('https://localhost:44385/Movie/Search?prefix=' + searchtext)
+                .then(response => response.json())
+                .then(data => {
+                    for (var i = 0; i < data.length; i++) {
+                        $('#search-result').append(`
+                            <div class="col-lg-4 col-6 ">
+                                <div class="blog-post">
+                                    <div class="blog-thumb">
+                                        <img src="/${data[i].imagePath}" alt="">
+                                    </div>
+                                    <div class="down-content" style="padding-bottom: 10px;padding-top: 10px;">
+
+                                        @*<span>@i.Title</span>*@
+                                        @*<a href="~/Movie/MovieSingle/?id=@i.Id">*@<h4>${data[i].title}</h4>@*</a>*@
+                                        <ul class="post-info">
+
+                                            @*<li><a href="#">@i.Latest</a></li>*@
+
+                                        </ul>
+                                        <p style="padding-bottom: 0px; padding-top: 2px;">${data[i].text}</p>
+                                        <a style="color: #F48840; " href="${data[i].watch}">Watch Movie!</a>
+                                    </div>
+                                </div>
+                            </div>`);
+                    }
+                });
+           
+        });
+    });
+</script>
