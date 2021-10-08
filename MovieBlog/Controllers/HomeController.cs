@@ -20,7 +20,7 @@ namespace MovieBlog.Controllers
             db = d;
             _logger = logger;
         }
-        [Route("MovieCesar")]
+       
         public IActionResult Index()
         {
             return View();
